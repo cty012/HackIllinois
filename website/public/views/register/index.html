@@ -6,17 +6,13 @@
   </head>
   <body>
     <p> Register for an Account </p>
-    <p> Please put the Account ID </p>
-    <form>
-      <input type = "text" name = "Account_ID" value = ""> 
-    <p> Please put the Zip Code </p>
-    <form>
-      <input type = "text" name = "Zip_Code" value = ""> 
-      <p> Please select the type of crop you are planting </p>
-      <select name = "crop" id = "crop">
-        <option value = "corn">Corn</option>
-        <option value = "potato">Potato</option>
-      </select>
+    <form action="/action_page.php">
+      <label for="Account_iD">New Account ID:</label><br>
+      <input type="text" id="Account_id" name="Account_id" value=""><br>
+      <label for="Password">Password:</label><br>
+      <input type="text" id="Password" name="Password" value=""><br>
+      <input type="submit" value="Submit">
+</form>
   </body>
     
 
