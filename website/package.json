@@ -1,0 +1,16 @@
+{
+  "name": "precise-irrigation",
+  "version": "1.0.0",
+  "description": "Final product of HackIllinois",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "hackillinois",
+    "irrigation"
+  ],
+  "author": "Tianyue Cao",
+  "license": "ISC",
+  "dependencies": {}
+}
