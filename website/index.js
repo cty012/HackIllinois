@@ -60,6 +60,12 @@ app.get("/logout", (req, res) => {
     res.redirect("/login");
 });
 
+app.get("/user/profile", (req, res) => {
+    // check password
+    if (!req.session.username) return;
+    dbManager.getProfileByUsername(profile => { res.json(profile); });
+});
+
 // POST request
 app.post("/login/check", (req, res) => {
     // check password
