@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title> Register for an account </title>
-  </head>
-  <body>
-    <p> Register for an Account </p>
-    <form action="/register/check", method="post">
-      <label for="username">New username:</label><br>
-      <input type="text" id="username" name="username" value=""><br>
-      <label for="password">Set password:</label><br>
-      <input type="text" id="password" name="password" value=""><br>
-      <label for="password">Confirm password:</label><br>
-      <input type="text" id="cpassword" name="cpassword" value=""><br>
-      <label for="zipcode">Please put your zip code:</label><br>
-      <input type="text" id="zipcode" name="zipcode" value=""><br>
-      <p> Please check the following boxes for the types of crops you plant:</p>
-      
-      <input type="checkbox" id="corn" name="corn" value="true">
-      <label for="corn">Corn</label><br>
-      <input type="checkbox" id="potato" name="potato" value="true">
-      <label for="potato">Potato</label><br>
-      <input type="checkbox" id="wheat" name="wheat" value="true">
-      <label for="wheat">Wheat</label><br>
-      
-      <input type="submit" value="Submit">
-    </form>
-  </body>
-    
-
-  
-
-
-
+    <head>
+        <title>Register - Precise Irrigation</title>
+        <link rel="stylesheet/less" type="text/css" href="/views/shared/style.less">
+        <link rel="stylesheet/less" type="text/css" href="/views/register/style.less">
+        <script src="/views/shared/script.js"></script>
+        <script src="/views/register/script.js"></script>
+        <script src="/views/shared/less.js"></script>
+    </head>
+    <body>
+        <div id="register-box">
+            <form action="/register/check", method="post">
+                <div class="login-title">Register for an Account</div>
+                <div class="register-contents">
+                    <div class="input-box">
+                        <label for="username">New username:</label>
+                        <input type="text" id="username" name="username" value="">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Set password:</label>
+                        <input type="password" id="password" name="password" value="">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Confirm password:</label>
+                        <input type="text" id="cpassword" name="cpassword" value="">
+                    </div>
+                    <div class="input-box">
+                        <label for="zipcode">Zip code:</label>
+                        <input type="text" id="zipcode" name="zipcode" value="">
+                    </div>
+                    <div class="login-explain">Check the boxes for the types of crops you plant:</div>
+                    <div class="check-box">
+                        <input type="checkbox" id="corn" name="corn" value="true">
+                        <label for="corn">Corn</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="potato" name="potato" value="true">
+                        <label for="potato">Potato</label>
+                    </div>
+                    <div class="check-box">
+                        <input type="checkbox" id="wheat" name="wheat" value="true">
+                        <label for="wheat">Wheat</label>
+                    </div>
+                    <div class="log-reg-box"><a href="/login">Log in</a></div>
+                </div>
+                <div class="login-submit"><input class="submit" type="submit" value="Submit"></div>
+            </form>
+        </div>
+    </body>
 </html>

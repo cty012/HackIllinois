@@ -21,7 +21,7 @@ const SECRET_KEY = "averylongandrandomsecretkeyOIJBVSFDALLOSBVNLS";
 app.use(sessions({
     secret: SECRET_KEY,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 * 60 * 2 },  // 2 hour
+    cookie: { maxAge: 1000 * 60 * 60 },  // 1 hour
     resave: false
 }));
 app.use(cookieParser());
@@ -50,7 +50,7 @@ app.get("/register", (req, res) => {
 
 app.get("/user", (req, res) => {
     if (req.session.username) {
-        res.sendFile(path.join(__dirname, "/public/views/profile/index.html"));
+        res.sendFile(path.join(__dirname, "/public/views/user/index.html"));
     } else {
         res.redirect("/login");
     }
@@ -72,14 +72,20 @@ app.post("/login/check", (req, res) => {
     // check password
     let username = req.body.username;
     let password = req.body.password;
-    dbManager.getUserPassword(username, actual_password => {
-        if (password != actual_password) {
+    dbManager.findUser(username, exist => {
+        if (!exist) {
             res.redirect("/login");
             return;
         }
-        // set up a session
-        req.session.username = username;
-        res.redirect("/home");
+        dbManager.getUserPassword(username, actual_password => {
+            if (password != actual_password) {
+                res.redirect("/login");
+                return;
+            }
+            // set up a session
+            req.session.username = username;
+            res.redirect("/home");
+        });
     });
 });
 

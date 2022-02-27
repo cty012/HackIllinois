@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <title>Precise Irrigation: Login</title>
-  </head>
-  <body>
-    <form action="/login/check", method="post">
-      <div> Login to your account </div>
-      <div id="username-box">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-      </div>
-      <div id="password-box">
-        <label for="password">Password:</label><br>
-        <input type="text" id="password" name="password"><br>
-      </div>
-      <input type="submit" value="Submit">
-    </form>
-  </body>
+    <head>
+        <title>Login - Precise Irrigation</title>
+        <link rel="stylesheet/less" type="text/css" href="/views/shared/style.less">
+        <link rel="stylesheet/less" type="text/css" href="/views/login/style.less">
+        <script src="/views/shared/script.js"></script>
+        <script src="/views/login/script.js"></script>
+        <script src="/views/shared/less.js"></script>
+    </head>
+    <body>
+        <div id="login-box">
+            <form action="/login/check", method="post">
+                <div class="login-title">Login to your account</div>
+                <div class="login-contents">
+                    <div class="input-box">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="log-reg-box"><a href="/register">Register</a></div>
+                </div>
+                <div class="login-submit"><input class="submit" type="submit" value="Submit"></div>
+            </form>
+        </div>
+    </body>
 </html>

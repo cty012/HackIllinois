@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <title>Precise Irrigation</title>
-</head>
-<body>
-    <div id="header">
-        <a class="header-button-link" href="/user">
-            <button class="header-button">user</button>
-        </a>
-        <a class="header-button-link" href="/logout">
-            <button class="header-button">logout</button>
-        </a>
-    </div>
-    <div id="contents">
-        <div id="info">
-            <div id="info-moisture">
-                Measured soil moisture: <span id="info-moisture-value">0</span> %
-            </div>
-            <div id="info-precipitation">
-                Predicted precipitation: <span id="info-precipitation-value">0</span> inches
-            </div>
-            <div id="info-recommend">
-                Irrigation recommendation: <span id="info-recommend-value">0</span> inches
+    <head>
+        <title>Home - Precise Irrigation</title>
+        <link rel="stylesheet/less" type="text/css" href="/views/shared/style.less">
+        <link rel="stylesheet/less" type="text/css" href="/views/home/style.less">
+        <script src="/views/shared/script.js"></script>
+        <script src="/views/home/script.js"></script>
+        <script src="/views/shared/less.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <a class="header-button-link" href="/logout">
+                <button class="header-button">logout</button>
+            </a>
+            <a class="header-button-link" href="/user">
+                <button class="header-button">user</button>
+            </a>
+        </div>
+        <div id="contents">
+            <div id="info-section">
+                <div id="info-moisture" class="info">
+                    Measured soil moisture: <span id="info-moisture-value">43</span> %
+                </div>
+                <div id="info-precipitation" class="info">
+                    Predicted precipitation: <span id="info-precipitation-value">0.2</span> inches
+                </div>
+                <div id="info-recommend" class="info">
+                    Irrigation recommendation: <span id="info-recommend-value">1.2</span> inches
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
