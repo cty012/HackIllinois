@@ -13,7 +13,8 @@ process.chdir(path.join(__dirname, "public"));
 // Set up server
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
-app.listen("8080");
+app.use(bodyParser.urlencoded({extended: false}));
+app.listen("80");
 
 // Set up the login sessions
 const SECRET_KEY = "averylongandrandomsecretkeyOIJBVSFDALLOSBVNLS";
@@ -76,8 +77,37 @@ app.post("/login/check", (req, res) => {
             res.redirect("/login");
             return;
         }
-        // Set up a session
+        // set up a session
         req.session.username = username;
-        res.redirect("/user");
+        res.redirect("/home");
+    });
+});
+
+app.post("/register/check", (req, res) => {
+    // check if exist
+    let username = req.body.username;
+    let password = req.body.password;
+    let zipcode = req.body.zipcode;
+    // check if password matches
+    if (password != req.body.cpassword) {
+        res.redirect("/register");
+        return;
+    }
+    dbManager.findUser(username, exist => {
+        if (exist) {
+            res.redirect("/register");
+            return;
+        }
+        // register
+        dbManager.addUser(username, password, insertId => {
+            dbManager.getPlantTypes(plant_types => {
+                user_plant_types = [];
+                plant_types.forEach(plant_type => {
+                    if (req.body[plant_type.name]) user_plant_types.push(plant_type.id);
+                });
+                dbManager.createProfile(insertId, zipcode, user_plant_types);
+                res.redirect("/login");
+            });
+        });
     });
 });

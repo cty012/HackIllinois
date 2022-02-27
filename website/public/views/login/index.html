@@ -2,16 +2,20 @@
 
 <html>
   <head>
-    <title> Login Page </title>
+    <title>Precise Irrigation: Login</title>
   </head>
-  
   <body>
-    <p> Login to Your Account </p>
-    <label for="Account_id">Account ID:</label><br>
-    <input type="text" id="Account_id" name="Account_id"><br>
-    <label for="Password">Password:</label><br>
-    <input type="text" id="Password" name="Password"><br>
-    <input type="submit" value="Submit">
+    <form action="/login/check", method="post">
+      <div> Login to your account </div>
+      <div id="username-box">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+      </div>
+      <div id="password-box">
+        <label for="password">Password:</label><br>
+        <input type="text" id="password" name="password"><br>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
   </body>
-
 </html>

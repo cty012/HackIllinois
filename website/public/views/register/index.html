@@ -6,21 +6,23 @@
   </head>
   <body>
     <p> Register for an Account </p>
-    <form action="/action_page.php">
-      <label for="Account_id">New Account ID:</label><br>
-      <input type="text" id="Account_id" name="Account_id" value=""><br>
-      <label for="Password">Set Password:</label><br>
-      <input type="text" id="Password" name="Password" value=""><br>
-      <label for="Zip_code">Please put your Zip Code:</label><br>
-      <input type="text" id="Zip_code" name="Zip_code" value=""><br>
-      <p> Please check the following boxes for the types of crops you plant </p>
+    <form action="/register/check", method="post">
+      <label for="username">New username:</label><br>
+      <input type="text" id="username" name="username" value=""><br>
+      <label for="password">Set password:</label><br>
+      <input type="text" id="password" name="password" value=""><br>
+      <label for="password">Confirm password:</label><br>
+      <input type="text" id="cpassword" name="cpassword" value=""><br>
+      <label for="zipcode">Please put your zip code:</label><br>
+      <input type="text" id="zipcode" name="zipcode" value=""><br>
+      <p> Please check the following boxes for the types of crops you plant:</p>
       
-      <input type="checkbox" id="corn" name="corn" value="Corn">
-      <label for="corn"> Corn</label><br>
-      <input type="checkbox" id="potato" name="potato" value="Potato">
-      <label for="potato"> Potato</label><br>
-      <input type="checkbox" id="rice" name="rice" value="Rice">
-      <label for="rice"> Rice</label><br>
+      <input type="checkbox" id="corn" name="corn" value="true">
+      <label for="corn">Corn</label><br>
+      <input type="checkbox" id="potato" name="potato" value="true">
+      <label for="potato">Potato</label><br>
+      <input type="checkbox" id="wheat" name="wheat" value="true">
+      <label for="wheat">Wheat</label><br>
       
       <input type="submit" value="Submit">
     </form>

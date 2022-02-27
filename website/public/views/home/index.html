@@ -1,7 +1,30 @@
 <!DOCTYPE html>
 
 <html>
-
-
-
+<head>
+    <title>Precise Irrigation</title>
+</head>
+<body>
+    <div id="header">
+        <a class="header-button-link" href="/user">
+            <button class="header-button">user</button>
+        </a>
+        <a class="header-button-link" href="/logout">
+            <button class="header-button">logout</button>
+        </a>
+    </div>
+    <div id="contents">
+        <div id="info">
+            <div id="info-moisture">
+                Measured soil moisture: <span id="info-moisture-value">0</span> %
+            </div>
+            <div id="info-precipitation">
+                Predicted precipitation: <span id="info-precipitation-value">0</span> inches
+            </div>
+            <div id="info-recommend">
+                Irrigation recommendation: <span id="info-recommend-value">0</span> inches
+            </div>
+        </div>
+    </div>
+</body>
 </html>
