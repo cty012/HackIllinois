@@ -1,0 +1,110 @@
+/* VARIABLES */
+@login-box-width: 400px;
+@login-box-height: 280px;
+@register-box-width: 500px;
+@register-box-height: 570px;
+@input-box-margin: 10px;
+@input-box-height: 50px;
+@check-box-height: 30px;
+@login-explain-height: 20px;
+
+/* STYLES */
+#login-box {
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: @login-box-width;
+    height: @login-box-height;
+    border: 1px solid #000000;
+}
+
+#register-box {
+    #login-box;
+    width: @register-box-width;
+    height: @register-box-height;
+}
+
+.login-title {
+    width: 100%;
+    height: @input-box-height;
+    text-align: center;
+    line-height: @input-box-height;
+    font-size: 20px;
+}
+
+.input-box {
+    display: block;
+    margin: @input-box-margin;
+    width: calc(100% - @input-box-margin * 2);
+    height: @input-box-height;
+}
+
+.input-box label {
+    display: block;
+    float: left;
+    padding: 0 30px;
+    width: calc(40% - 60px);
+    height: @input-box-height;
+    text-align: right;
+    line-height: $height;
+}
+
+.input-box input {
+    display: block;
+    float: right;
+    margin: 10px 0px;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    padding: 0px 20px;
+    width: calc(60% - 44px);
+    height: @input-box-height - 20px;
+    text-align: left;
+}
+
+.check-box {
+    display: block;
+    margin: @input-box-margin;
+    padding: 0px 60px;
+    width: calc(100% - 70px * 2);
+    height: @check-box-height;
+    line-height: $height;
+}
+
+.login-explain {
+    padding: 10px 30px;
+    height: @login-explain-height;
+    line-height: $height;
+}
+
+.log-reg-box {
+    padding: 10px;
+    height: @input-box-height - 20px;
+    text-align: right;
+}
+
+.login-submit {
+    display: block;
+    padding: 10px 0px;
+    width: 100%;
+    height: calc(@input-box-height - 20px);
+    text-align: center;
+}
+
+.submit {
+    width: 100px;
+    height: 100%;
+}
+
+.login-contents {
+    display: block;
+    width: 100%;
+    height: @login-box-height - @input-box-height - @input-box-height - 10px;
+}
+
+.register-contents {
+    .login-contents;
+    height: @register-box-height - @input-box-height - @input-box-height - 10px;
+}
